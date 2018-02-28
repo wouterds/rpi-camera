@@ -2,6 +2,7 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 import type { Node } from 'react';
+import 'styles/core.css';
 
 /**
  * Render the component
