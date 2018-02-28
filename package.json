@@ -2,6 +2,10 @@
   "name": "rpi-camera",
   "version": "0.0.1",
   "scripts": {
+    "start": "npm run dev",
+    "dev": "./node_modules/.bin/webpack --mode development --watch --colors",
+    "hot": "./node_modules/.bin/webpack-dev-server --mode development --open --hot --inline --colors",
+    "build": "./node_modules/.bin/webpack --mode production --progress --colors"
   },
   "dependencies": {
     "react": "^16.2.0",
