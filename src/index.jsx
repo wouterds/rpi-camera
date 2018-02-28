@@ -1,12 +1,14 @@
+//@flow
 import ReactDOM from 'react-dom';
 import React from 'react';
+import type { Node } from 'react';
 
 /**
  * Render the component
  *
  * @returns {Node}
  */
-const Index = () => {
+const Index = (): Node => {
   return (
     <div>
       Hello World!
