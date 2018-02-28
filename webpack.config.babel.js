@@ -1,6 +1,7 @@
 import path from 'path';
 import { LoaderOptionsPlugin, optimize } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import FlowBabelWebpackPlugin from 'flow-babel-webpack-plugin';
 
 const production = process.env.NODE_ENV === 'production';
 
@@ -62,6 +63,7 @@ let config =  {
     ],
   },
   plugins: [
+    new FlowBabelWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: path.join(__dirname, './public/index.html'),
       template: path.join(__dirname, './src/index.html'),
