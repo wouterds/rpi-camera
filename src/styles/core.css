@@ -1,7 +1,7 @@
-@import 'reset.css';
-@import 'variables.css';
-@import 'mixins.css';
-@import 'fonts.css';
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+@import 'fonts';
 
 body {
   background: #041939;

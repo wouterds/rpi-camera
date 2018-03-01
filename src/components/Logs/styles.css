@@ -1,5 +1,5 @@
-@import 'variables.css';
-@import 'animations.css';
+@import 'variables';
+@import 'animations';
 
 .logs {
   opacity: 0;

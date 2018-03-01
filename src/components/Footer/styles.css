@@ -1,5 +1,5 @@
-@import 'variables.css';
-@import 'animations.css';
+@import 'variables';
+@import 'animations';
 
 .footer {
   line-height: 2;
