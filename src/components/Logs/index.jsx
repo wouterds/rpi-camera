@@ -17,7 +17,20 @@ class Logs extends Component<{}, State>
     super(...arguments);
 
     this.state = {
-      logs: [],
+      logs: [
+        {
+          status: 'info',
+          text: 'Hello World',
+        },
+        {
+          status: 'error',
+          text: 'Hello World',
+        },
+        {
+          status: 'success',
+          text: 'Hello World',
+        },
+      ],
     };
   }
 
@@ -32,7 +45,7 @@ class Logs extends Component<{}, State>
     return (
       <div className={styles.logs}>
         {logs.map((log) => {
-          <Log status={log.status} text={log.text} />
+          return (<Log status={log.status} text={log.text} key={`log-${logs.indexOf(log)}`} />);
         })}
       </div>
     );
