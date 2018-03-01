@@ -5,9 +5,10 @@
   --color-white-ultra-opaque: rgba(#fff, 0.1);
   --color-black: #000;
   --color-black-opaque: rgba(#000, 0.15);
-  --color-green: #39B275;
-  --color-red: #DA3654;
+  --color-green: #06ff82;
+  --color-red: #ff3e62;
   --color-yellow: #F8DA31;
+  --color-blue: #0aaeff;
   --color-purple: #8247D1;
   --color-background: #10182A;
   --color-background-gradient: linear-gradient(90deg, #10182A, #0C1224);

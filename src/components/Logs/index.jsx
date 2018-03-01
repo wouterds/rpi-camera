@@ -23,11 +23,11 @@ class Logs extends Component<{}, State>
           text: 'Hello World',
         },
         {
-          status: 'error',
+          status: 'fail',
           text: 'Hello World',
         },
         {
-          status: 'success',
+          status: 'ok',
           text: 'Hello World',
         },
       ],
