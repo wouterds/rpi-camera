@@ -8,6 +8,7 @@
     "build": "./node_modules/.bin/webpack --mode production --progress --colors"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
