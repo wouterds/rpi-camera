@@ -1,8 +1,11 @@
-@import 'variables';
+@import 'variables.css';
+@import 'animations.css';
 
 .footer {
   line-height: 2;
   color: var(--color-white-opaque);
   background: var(--color-black-opaque);
   padding: 25px;
+  opacity: 0;
+  animation: flicker 2s linear 100ms 1 normal forwards;
 }

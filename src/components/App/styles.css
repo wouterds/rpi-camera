@@ -1,4 +1,5 @@
-@import 'variables';
+@import 'variables.css';
+@import 'animations.css';
 
 .app {
   color: var(--color-white);
@@ -17,4 +18,6 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  animation: flicker 2s linear 200ms 1 normal forwards;
 }
