@@ -4,8 +4,8 @@
 @import 'fonts.css';
 
 body {
-  background: var(--color-background);
-  background: var(--color-background-gradient);
+  background: #041939;
+  background: linear-gradient(90deg, #041939, #2D3572);
   font-family: var(--font-family-default);
   font-size: 1.2em;
 }
