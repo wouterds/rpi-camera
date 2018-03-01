@@ -5,8 +5,8 @@
   --color-white-ultra-opaque: rgba(#fff, 0.1);
   --color-black: #000;
   --color-black-opaque: rgba(#000, 0.15);
-  --color-background: #181d2e;
-  --color-background-gradient: linear-gradient(90deg, #212537, #151928);
+  --color-background: #10182A;
+  --color-background-gradient: linear-gradient(90deg, #10182A, #0C1224);
 
   --font-family-default: Hack, Menlo, 'Courier New', monospace;
   --font-weight-regular: 400;
