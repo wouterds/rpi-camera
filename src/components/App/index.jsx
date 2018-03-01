@@ -14,9 +14,16 @@ class App extends Component<{}>
    * @returns {Node}
    */
   render(): Node {
+    const cameraStream = '';
+
     return (
       <div className={styles.app}>
         <main className={styles.content}>
+          <div className={styles.left}>
+            <div className={styles.camera}>
+              <img src={cameraStream} />
+            </div>
+          </div>
           <div className={styles.right}>
             <Logs />
             <Controls />
