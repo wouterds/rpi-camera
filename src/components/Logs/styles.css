@@ -1,3 +1,6 @@
-.logs {
+@import 'variables.css';
 
+.logs {
+  border: 1px solid var(--color-white-ultra-opaque);
+  padding: 2px;
 }

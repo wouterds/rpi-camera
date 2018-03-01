@@ -2,6 +2,7 @@
   --color-transparent: rgba(#fff, 0);
   --color-white: #fff;
   --color-white-opaque: rgba(#fff, 0.5);
+  --color-white-ultra-opaque: rgba(#fff, 0.1);
   --color-black: #000;
   --color-black-opaque: rgba(#000, 0.15);
   --color-background: #181d2e;
