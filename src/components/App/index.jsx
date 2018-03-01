@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import type { Node } from 'react';
 import styles from './styles.css';
 import Logs from 'components/Logs';
+import Controls from 'components/Controls';
 import Footer from 'components/Footer';
 
 class App extends Component<{}>
@@ -17,6 +18,7 @@ class App extends Component<{}>
       <div className={styles.app}>
         <main className={styles.content}>
           <Logs />
+          <Controls />
         </main>
 
         <Footer />
