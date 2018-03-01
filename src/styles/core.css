@@ -1,7 +1,10 @@
 @import 'reset.css';
 @import 'variables.css';
+@import 'mixins.css';
+@import 'fonts.css';
 
 body {
   background: var(--color-background);
   background: var(--color-background-gradient);
+  font-family: var(--font-family-default);
 }

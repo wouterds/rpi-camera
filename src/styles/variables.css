@@ -4,4 +4,7 @@
   --color-black: #000;
   --color-background: #181d2e;
   --color-background-gradient: linear-gradient(90deg, #212537, #151928);
+
+  --font-family-default: Hack, Menlo, 'Courier New', monospace;
+  --font-weight-regular: 400;
 }
