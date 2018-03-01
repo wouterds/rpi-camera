@@ -17,8 +17,10 @@ class App extends Component<{}>
     return (
       <div className={styles.app}>
         <main className={styles.content}>
-          <Logs />
-          <Controls />
+          <div className={styles.right}>
+            <Logs />
+            <Controls />
+          </div>
         </main>
 
         <Footer />

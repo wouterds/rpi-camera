@@ -5,7 +5,7 @@
 
 body {
   background: #041939;
-  background: linear-gradient(90deg, #041939, #2D3572);
+  background: linear-gradient(60deg, #041939, #2D3572);
   font-family: var(--font-family-default);
   font-size: 1.2em;
 }

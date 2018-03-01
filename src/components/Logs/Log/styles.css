@@ -1,10 +1,13 @@
 @import 'variables';
 
 .log {
-  color: rgba(var(--color-white), 0.8);
-  padding: 5px;
+  color: rgba(220, 220, 255, 0.7);
+  padding: 7px 5px;
   background: rgba(var(--color-black), 0.1);
-  margin: 1px;
+
+  + .log {
+    border-top: 1px solid rgba(var(--color-white), 0.05);
+  }
 }
 
 .status {
