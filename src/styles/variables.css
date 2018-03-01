@@ -1,0 +1,7 @@
+:root {
+  --color-transparent: rgba(#fff, 0);
+  --color-white: #fff;
+  --color-black: #000;
+  --color-background: #181d2e;
+  --color-background-gradient: linear-gradient(90deg, #212537, #151928);
+}

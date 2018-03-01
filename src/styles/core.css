@@ -1,6 +1,7 @@
 @import 'reset.css';
+@import 'variables.css';
 
 body {
-  background: #0f0c29;
-  background: linear-gradient(90deg, #212537, #151928);
+  background: var(--color-background);
+  background: var(--color-background-gradient);
 }
