@@ -1,5 +1,5 @@
 import path from 'path';
-import { LoaderOptionsPlugin, optimize } from 'webpack';
+import { LoaderOptionsPlugin } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import FlowBabelWebpackPlugin from 'flow-babel-webpack-plugin';
 
@@ -79,9 +79,5 @@ let config =  {
     port: 8080,
   },
 };
-
-if (production) {
-  config.plugins.push(new optimize.UglifyJsPlugin());
-}
 
 module.exports = config;
