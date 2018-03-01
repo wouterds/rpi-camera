@@ -13,7 +13,8 @@
     "emoji-flags": "^1.2.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-twemoji": "0.0.8"
+    "react-twemoji": "0.0.8",
+    "socket.io": "^2.0.4"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
