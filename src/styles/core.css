@@ -8,3 +8,10 @@ body {
   background: var(--color-background-gradient);
   font-family: var(--font-family-default);
 }
+
+html,
+body,
+.root {
+  min-height: 100%;
+  height: 100%;
+}

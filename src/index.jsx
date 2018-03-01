@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import type { Node } from 'react';
 import App from 'components/App';
-import 'styles/core.css';
+import styles from 'styles/core.css';
 
 /**
  * Render the component
@@ -22,4 +22,5 @@ if (root === null) {
   throw new Error('Could not find root element!');
 }
 
+root.className = styles.root;
 ReactDOM.render(<Index />, root);
