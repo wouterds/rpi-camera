@@ -1,8 +1,22 @@
 @import 'variables.css';
 
 .button {
-  color: var(--color-purple);
+  user-select: none;
+  background: none;
+  color: var(--color-white-opaque);
+  background: rgba(var(--color-black), 0.005);
   padding: 0 15px;
-  line-height: 48px;
+  line-height: 40px;
   border: 1px solid var(--color-white-ultra-opaque);
+  font-size: 1em;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-white);
+    background: rgba(var(--color-white), 0.01);
+  }
+
+  &:active {
+    background: var(--color-purple);
+  }
 }

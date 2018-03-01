@@ -2,10 +2,12 @@
 import React, { Component } from 'react';
 import type { Node } from 'react';
 import styles from './styles.css';
+import cx from 'classnames';
 
 type Props = {
   text: string,
-  onClick: Function,
+  onClick?: Function,
+  className?: string,
 };
 
 class Button extends Component<Props>
@@ -16,10 +18,10 @@ class Button extends Component<Props>
    * @returns {Node}
    */
   render(): Node {
-    const { text, onClick } = this.props;
+    const { text, onClick, className } = this.props;
 
     return (
-      <button className={styles.button} onClick={onClick}>{text}</button>
+      <button className={cx(styles.button, className)} onClick={onClick}>{text}</button>
     );
   }
 }
