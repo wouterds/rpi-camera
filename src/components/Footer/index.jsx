@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 import type { Node } from 'react';
 import styles from './styles.css';
 import axios from 'axios';
-import { isoCountries } from 'config';
+import { twemoji } from 'config';
 import EmojiFlags from 'emoji-flags';
+import Twemoji from 'react-twemoji';
 
 type Props = {};
 
@@ -57,9 +58,11 @@ class Footer extends Component<Props, State>
 
     return (
       <footer className={styles.footer}>
-        {`Connected from ${visitorInfo.ip}, ${visitorInfo.region}, ${emojiFlag ? emojiFlag.name : ''} ${emojiFlag ? emojiFlag.emoji : ''}`}
-        <br />
-        {visitorInfo.userAgent}
+        <Twemoji options={twemoji}>
+          {`Connected from ${visitorInfo.ip}, ${visitorInfo.region}, ${emojiFlag ? emojiFlag.name : ''} ${emojiFlag ? emojiFlag.emoji : ''}`}
+          <br />
+          {visitorInfo.userAgent}
+        </Twemoji>
       </footer>
     );
   }
