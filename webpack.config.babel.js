@@ -23,6 +23,7 @@ let config =  {
     extensions: ['.js', '.jsx'],
     modules: [
       path.resolve('./src'),
+      path.resolve('./resources'),
       path.resolve('./node_modules'),
     ],
   },
