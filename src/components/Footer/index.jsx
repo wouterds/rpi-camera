@@ -4,6 +4,7 @@ import type { Node } from 'react';
 import styles from './styles.css';
 import axios from 'axios';
 import { isoCountries } from 'config';
+import EmojiFlags from 'emoji-flags';
 
 type Props = {};
 
@@ -52,10 +53,11 @@ class Footer extends Component<Props, State>
    */
   render(): Node {
     const { visitorInfo } = this.state;
+    const emojiFlag = visitorInfo.country !== 'loading' ? EmojiFlags.countryCode(visitorInfo.country) : null;
 
     return (
       <footer className={styles.footer}>
-        {`Connected from ${visitorInfo.ip}, ${visitorInfo.region}, ${isoCountries[visitorInfo.country]}`}
+        {`Connected from ${visitorInfo.ip}, ${visitorInfo.region}, ${emojiFlag ? emojiFlag.name : ''} ${emojiFlag ? emojiFlag.emoji : ''}`}
         <br />
         {visitorInfo.userAgent}
       </footer>
