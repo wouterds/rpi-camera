@@ -14,7 +14,7 @@ class App extends Component<{}>
    * @returns {Node}
    */
   render(): Node {
-    const cameraStream = '';
+    const cameraStream = `${location.protocol}//${location.host}:8080?action=stream`;
 
     return (
       <div className={styles.app}>
