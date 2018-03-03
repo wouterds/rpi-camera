@@ -1,6 +1,8 @@
 # RPI Camera
 
-Web controllable camera using a Raspberry Pi and a cheap USB cam from eBay
+Web controllable camera using a Raspberry Pi and a cheap USB cam from eBay.
+
+https://wouterdeschuyter.be/blog/how-to-create-a-15-dollar-web-controllable-camera-with-a-raspberry-pi-zero
 
 ## Dependencies
 
