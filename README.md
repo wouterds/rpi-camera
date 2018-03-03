@@ -19,7 +19,7 @@ rm -rf node-v9.7.1-linux-armv6l
 rm node-v9.7.1-linux-armv6l.tar.gz
 ```
 
-#### PiGPIO
+### PiGPIO
 
 ```shell
 sudo apt-get update
