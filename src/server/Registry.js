@@ -24,15 +24,21 @@ class Registry {
   }
 
   static get(object) {
-    if (!Registry.instance.objects.hasOwnProperty(object)) {
-      switch (object) {
-        case LogService:
-          Registry.instance.objects[LogService] = LogService.instance;
-          break;
-      }
+    if (Registry.instance.objects.hasOwnProperty(object)) {
+      return Registry.instance.objects[object];
     }
 
-    return Registry.instance.objects[object];
+    switch (object) {
+      case LogService:
+        Registry.instance.objects[LogService] = LogService.instance;
+        break;
+    }
+
+    if (Registry.instance.objects.hasOwnProperty(object)) {
+      return Registry.instance.objects[object];
+    }
+
+    return null;
   }
 }
 
