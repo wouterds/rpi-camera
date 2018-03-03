@@ -14,6 +14,7 @@ class Server
    */
   constructor() {
     this.logService = Registry.get(LogService);
+    this.servoService = Registry.get(ServoService);
 
     this.logService.log('[Server] Initializing..');
 
@@ -59,11 +60,8 @@ class Server
    * @param {object} response
    */
   moveServoLeft(request, response) {
-    // Get servo service from registry
-    const servoService = Registry.get(ServoService);
-
     // Move servo left
-    servoService.moveLeft();
+    this.servoService.moveLeft();
 
     // Response
     response.json({ success: true });
@@ -76,11 +74,8 @@ class Server
    * @param {object} response
    */
   moveServoRight(request, response) {
-    // Get servo service from registry
-    const servoService = Registry.get(ServoService);
-
     // Move servo left
-    servoService.moveRight();
+    this.servoService.moveRight();
 
     // Response
     response.json({ success: true });
