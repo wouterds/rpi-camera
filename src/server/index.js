@@ -3,23 +3,33 @@ import Express from 'express';
 import { Server as HttpServer } from 'http';
 import SocketIO from 'socket.io';
 import { staticFolder, httpPort } from 'config';
+import LogService from 'server/services/Log';
+import Registry from 'server/registry';
 
 class Server
 {
   constructor() {
-    // Create Express app
+    this.logService = Registry.get(LogService);
+
+    this.logService.log('[Server] Initializing..');
+
+    this.setupServer();
+  }
+
+  setupServer() {
+    this.logService.log('[Server] Initializing Express..');
     const express = new Express();
 
-    // Set static folder
+    this.logService.log('[Server] Configuring Express static folder..');
     express.use(Express.static(staticFolder));
 
-    // Create http server with Express instance
+    this.logService.log('[Server] Initializing http server with Express instance..');
     const server = HttpServer(express);
 
-    // Start server & listen on port
+    this.logService.log(`[Server] Start http server on port ${httpPort}..`);
     server.listen(httpPort);
 
-    // Initialize Socket.io with http server instance
+    this.logService.log(`[Server] Initializing Socket.io with http server instance..`);
     const io = SocketIO(server);
   }
 }
