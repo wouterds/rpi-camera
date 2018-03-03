@@ -67,7 +67,6 @@ let config =  {
     ],
   },
   plugins: [
-    new FlowBabelWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: path.join(__dirname, './public/index.html'),
       template: path.join(__dirname, './src/index.html'),
@@ -82,5 +81,9 @@ let config =  {
     port: 8080,
   },
 };
+
+if (!production) {
+  config.plugins.push(new FlowBabelWebpackPlugin());
+}
 
 module.exports = config;
