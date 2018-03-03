@@ -9,7 +9,7 @@ class EventService {
    */
   constructor(io) {
     this.logService = Registry.get(LogService);
-    this.logService.log('[Services.Event] Initializing..');
+    this.logService.log('info', '[Services.Event] Initializing..');
 
     this.io = io;
     this.events = [];
@@ -29,7 +29,7 @@ class EventService {
     });
 
     // Log after pushing history to keep it in sync
-    this.logService.log(`[Services.Event] New client connected: ${socket.id}!`);
+    this.logService.log('ok', `[Services.Event] New client connected: ${socket.id}!`);
 
     socket.emit('client-id', socket.id);
 
@@ -43,7 +43,7 @@ class EventService {
    */
   disconnect(socket) {
     // Log after pushing history to keep it in sync
-    this.logService.log(`[Services.Event] Client disconnected: ${socket.id}!`);
+    this.logService.log('ok', `[Services.Event] Client disconnected: ${socket.id}!`);
   }
 
   /**

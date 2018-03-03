@@ -16,34 +16,34 @@ class Server
     this.logService = Registry.get(LogService);
     this.servoService = Registry.get(ServoService);
 
-    this.logService.log('[Server] Initializing..');
+    this.logService.log('info', '[Server] Initializing..');
 
     this.setup();
 
-    this.logService.log('[Server] Ready for connections!');
+    this.logService.log('ok', '[Server] Ready for connections!');
   }
 
   /**
    * Setup
    */
   setup() {
-    this.logService.log('[Server] Initializing Express..');
+    this.logService.log('info', '[Server] Initializing Express..');
     const express = new Express();
 
-    this.logService.log('[Server] Configuring Express static folder..');
+    this.logService.log('info', '[Server] Configuring Express static folder..');
     express.use(Express.static(staticFolder));
 
-    this.logService.log('[Server] Configuring Express routes..');
+    this.logService.log('info', '[Server] Configuring Express routes..');
     express.get('/servo/left', ::this.moveServoLeft);
     express.get('/servo/right', ::this.moveServoRight);
 
-    this.logService.log('[Server] Initializing http server with Express instance..');
+    this.logService.log('info', '[Server] Initializing http server with Express instance..');
     const server = HttpServer(express);
 
-    this.logService.log(`[Server] Start http server on port ${httpPort}..`);
+    this.logService.log('info', `[Server] Start http server on port ${httpPort}..`);
     server.listen(httpPort);
 
-    this.logService.log(`[Server] Initializing Socket.io with http server instance..`);
+    this.logService.log('info', `[Server] Initializing Socket.io with http server instance..`);
     const io = SocketIO(server);
 
     // Cache event service in registry

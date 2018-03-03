@@ -18,7 +18,7 @@ class Registry {
     this._type = 'SingletonEnforcer';
     this.objects = {};
 
-    LogService.instance.log('[Registry] Initializing..');
+    LogService.instance.log('info', '[Registry] Initializing..');
   }
 
   /**
@@ -42,18 +42,24 @@ class Registry {
    */
   static get(object) {
     if (!Registry.instance.objects.hasOwnProperty(object)) {
+      let instance = null;
+
       switch (object) {
         case LogService:
-          Registry.instance.objects[LogService] = LogService.instance;
+          instance = Registry.instance.objects[LogService] = LogService.instance;
           break;
         case ServoService:
-          Registry.instance.objects[ServoService] = new ServoService();
+          instance = Registry.instance.objects[ServoService] = new ServoService();
           break;
+      }
+
+      if (instance !== null) {
+        LogService.instance.log('fail', `[Registry] Not found ${Registry.instance.objects[object].constructor.name} in registry, creating..`);
       }
     }
 
     if (Registry.instance.objects.hasOwnProperty(object)) {
-      LogService.instance.log(`[Registry] Getting ${Registry.instance.objects[object].constructor.name} from registry..`);
+      LogService.instance.log('ok', `[Registry] Fetched ${Registry.instance.objects[object].constructor.name} from registry!`);
       return Registry.instance.objects[object];
     }
 
@@ -66,11 +72,12 @@ class Registry {
    * @param {Object} object
    */
   static set(object, instance) {
-    LogService.instance.log(`[Registry] Setting ${instance.constructor.name} to registry..`);
-
     if (Registry.instance.objects.hasOwnProperty(object)) {
+      LogService.instance.log('fail', `[Registry] Did not set ${instance.constructor.name} to registry, already exists!`);
       return;
     }
+
+    LogService.instance.log('ok', `[Registry] Setting ${instance.constructor.name} to registry..`);
 
     Registry.instance.objects[object] = instance;
   }

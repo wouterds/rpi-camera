@@ -5,11 +5,13 @@ import styles from './styles.css';
 import Log from './Log';
 import SocketIO from 'socket.io-client';
 
+type LogData = {
+  status: string,
+  text: string,
+};
+
 type State = {
-  logs: Array<{
-    status: string,
-    text: string,
-  }>,
+  logs: Array<LogData>,
 };
 
 class Logs extends Component<{}, State>
@@ -36,13 +38,13 @@ class Logs extends Component<{}, State>
   /**
    * New log event came in
    *
-   * @param {string} log
+   * @param {LogData} log
    */
-  handleNewLogEvent = (log: string) => {
+  handleNewLogEvent = (log: LogData) => {
     const logs = this.state.logs.slice();
 
     this.setState({
-      logs: [...logs, { status: 'info', text: log }],
+      logs: [...logs, log],
     });
 
     this.refs.logs.scrollTop = this.refs.logs.scrollHeight;

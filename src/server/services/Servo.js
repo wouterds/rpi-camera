@@ -8,12 +8,12 @@ class ServoService {
   constructor() {
     this.logService = Registry.get(LogService);
 
-    this.logService.log('[Services.Servo] Initializing..');
+    this.logService.log('info', '[Services.Servo] Initializing..');
 
     // Init Raspberry Pi connection
     init(() => {
-      this.logService.log('[Services.Servo] Connected to GPIO!');
-      this.logService.log(`[Services.Servo] Initializing PWM on pin ${servo.pin}..`);
+      this.logService.log('ok', '[Services.Servo] Connected to GPIO!');
+      this.logService.log('info', `[Services.Servo] Initializing PWM on pin ${servo.pin}..`);
 
       // Init PWM
       this.servo = new PWM(servo.pin);
@@ -48,7 +48,7 @@ class ServoService {
     }
 
     // Debugging
-    this.logService.log(`[Services.Servo] New position, ${this._position} => ${position}`);
+    this.logService.log('ok', `[Services.Servo] New position, ${this._position} => ${position}`);
 
     // Cache position
     this._position = position;
@@ -82,7 +82,7 @@ class ServoService {
   }
 
   testPosition() {
-    this.logService.log('[Services.Servo] Testing servo..');
+    this.logService.log('info', '[Services.Servo] Testing servo..');
 
     this.clearPosition(() => {
       let index = 1;
