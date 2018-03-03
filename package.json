@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-cli": "^6.26.0",
     "classnames": "^2.2.5",
     "emoji-flags": "^1.2.0",
     "react": "^16.2.0",
