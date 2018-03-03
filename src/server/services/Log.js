@@ -44,6 +44,8 @@ class LogService {
       return;
     }
 
+    this.log('[Services.Log] Setting event service..');
+
     this.es = eventService;
 
     if (this.notBroadcastedYet.length === 0) {
