@@ -1,4 +1,5 @@
 import LogService from 'server/services/Log';
+import ServoService from 'server/services/Servo';
 
 const singleton = Symbol();
 const singletonEnforcer = Symbol();
@@ -44,6 +45,9 @@ class Registry {
       switch (object) {
         case LogService:
           Registry.instance.objects[LogService] = LogService.instance;
+          break;
+        case ServoService:
+          Registry.instance.objects[ServoService] = new ServoService();
           break;
       }
     }
