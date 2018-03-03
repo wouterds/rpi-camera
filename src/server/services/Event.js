@@ -1,5 +1,5 @@
 import LogService from 'server/services/Log';
-import Registry from 'server/registry';
+import Registry from 'server/Registry';
 
 class EventService {
   /**

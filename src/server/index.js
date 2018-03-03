@@ -4,7 +4,7 @@ import SocketIO from 'socket.io';
 import { staticFolder, httpPort } from 'config';
 import LogService from 'server/services/Log';
 import EventService from 'server/services/Event';
-import Registry from 'server/registry';
+import Registry from 'server/Registry';
 
 class Server
 {
