@@ -6,6 +6,8 @@ const Config = {
     ext: '.svg',
     className: styles.emoji,
   },
+  staticFolder: 'public',
+  httpPort: 3000,
 };
 
 module.exports = Config;
