@@ -12,5 +12,12 @@
         "root": ["./src"]
       }
     ]
-  ]
+  ],
+  "env": {
+    "node": {
+      "plugins": [
+        "css-modules-transform"
+      ]
+    }
+  }
 }
