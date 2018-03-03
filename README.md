@@ -19,6 +19,13 @@ rm -rf node-v9.7.1-linux-armv6l
 rm node-v9.7.1-linux-armv6l.tar.gz
 ```
 
+#### PiGPIO
+
+```shell
+sudo apt-get update
+sudo apt-get install pigpio -y
+```
+
 ### MJPG Streamer
 
 ```shell
