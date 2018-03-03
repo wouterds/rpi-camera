@@ -14,7 +14,7 @@ class EventService {
     this.io = io;
     this.events = [];
 
-    this.io.on('connection', ::this.newConnection);
+    this.io.on('connection', ::this.connection);
   }
 
   /**
@@ -22,7 +22,7 @@ class EventService {
    *
    * @param {object} socket
    */
-  newConnection(socket) {
+  connection(socket) {
     // Push history
     this.events.forEach((event) => {
       socket.emit(event.type, event.data);
