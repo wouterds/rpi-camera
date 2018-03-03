@@ -2,7 +2,7 @@ import styles from 'styles/core.css';
 
 const Config = {
   staticFolder: 'public',
-  httpPort: 3000,
+  httpPort: 80,
   servo: {
     pin: 'GPIO13',
     pos: {
