@@ -9,15 +9,23 @@ import Registry from 'server/registry';
 
 class Server
 {
+  /**
+   * Constructor
+   */
   constructor() {
     this.logService = Registry.get(LogService);
 
     this.logService.log('[Server] Initializing..');
 
-    this.setupServer();
+    this.setup();
+
+    this.logService.log('[Server] Ready for connections!');
   }
 
-  setupServer() {
+  /**
+   * Setup
+   */
+  setup() {
     this.logService.log('[Server] Initializing Express..');
     const express = new Express();
 
