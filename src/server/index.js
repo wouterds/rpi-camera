@@ -35,6 +35,9 @@ class Server
 
     // Cache event service in registry
     Registry.set(EventService, new EventService(io));
+
+    // Set event service on LogService so it can broadcast
+    this.logService.eventService = Registry.get(EventService);
   }
 }
 
