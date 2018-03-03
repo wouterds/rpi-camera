@@ -40,21 +40,35 @@ class Registry {
    * @return {Object|null}
    */
   static get(object) {
-    if (Registry.instance.objects.hasOwnProperty(object)) {
-      return Registry.instance.objects[object];
-    }
-
-    switch (object) {
-      case LogService:
-        Registry.instance.objects[LogService] = LogService.instance;
-        break;
+    if (!Registry.instance.objects.hasOwnProperty(object)) {
+      switch (object) {
+        case LogService:
+          Registry.instance.objects[LogService] = LogService.instance;
+          break;
+      }
     }
 
     if (Registry.instance.objects.hasOwnProperty(object)) {
+      LogService.instance.log(`[Registry] Getting ${Registry.instance.objects[object].constructor.name} from registry..`);
       return Registry.instance.objects[object];
     }
 
     return null;
+  }
+
+  /**
+   * Set an object to the registry, if it doesn't exist
+   *
+   * @param {Object} object
+   */
+  static set(object, instance) {
+    LogService.instance.log(`[Registry] Setting ${instance.constructor.name} to registry..`);
+
+    if (Registry.instance.objects.hasOwnProperty(object)) {
+      return;
+    }
+
+    Registry.instance.objects[object] = instance;
   }
 }
 
