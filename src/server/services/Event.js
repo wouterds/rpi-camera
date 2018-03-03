@@ -32,6 +32,18 @@ class EventService {
     this.logService.log(`[Services.Event] New client connected: ${socket.id}!`);
 
     socket.emit('client-id', socket.id);
+
+    socket.on('disconnect', () => this.disconnect(socket));
+  }
+
+  /**
+   * When a client disconnect
+   *
+   * @param {object} socket
+   */
+  disconnect(socket) {
+    // Log after pushing history to keep it in sync
+    this.logService.log(`[Services.Event] Client disconnected: ${socket.id}!`);
   }
 
   /**
