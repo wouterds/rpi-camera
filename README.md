@@ -8,7 +8,7 @@ https://wouterdeschuyter.be/blog/how-to-create-a-15-dollar-web-controllable-came
 
 ### NodeJS
 
-```shell
+```bash
 wget https://nodejs.org/dist/v9.7.1/node-v9.7.1-linux-armv6l.tar.gz
 tar xf node-v9.7.1-linux-armv6l.tar.gz
 rm -f node-v9.7.1-linux-armv6l/*
@@ -21,14 +21,14 @@ rm node-v9.7.1-linux-armv6l.tar.gz
 
 ### PiGPIO
 
-```shell
+```bash
 sudo apt-get update
 sudo apt-get install pigpio -y
 ```
 
 ### MJPG Streamer
 
-```shell
+```bash
 sudo apt-get install libjpeg8-dev imagemagick libv4l-dev uvcdynctrl git cmake -y
 git clone https://github.com/jacksonliam/mjpg-streamer.git
 cd mjpg-streamer/mjpg-streamer-experimental
