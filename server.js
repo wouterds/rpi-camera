@@ -1,4 +1,3 @@
-//@flow
 import Server from 'server';
 
 // Start server

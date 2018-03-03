@@ -1,4 +1,3 @@
-//@flow
 import Express from 'express';
 import { Server as HttpServer } from 'http';
 import SocketIO from 'socket.io';
