@@ -32,12 +32,12 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.10",
-    "eslint": "^4.18.1",
+    "eslint": "^4.18.2",
     "eslint-plugin-flowtype": "^2.46.1",
     "eslint-plugin-react": "^7.7.0",
-    "file-loader": "^1.1.10",
+    "file-loader": "^1.1.11",
     "flow-babel-webpack-plugin": "^1.1.1",
-    "html-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^3.0.4",
     "postcss": "^6.0.19",
     "postcss-cssnext": "^3.1.0",
     "postcss-custom-media": "^6.0.0",
@@ -52,7 +52,7 @@
     "style-loader": "^0.20.2",
     "url-loader": "^0.6.2",
     "webpack": "^4.0.1",
-    "webpack-cli": "^2.0.9",
+    "webpack-cli": "^2.0.10",
     "webpack-dev-server": "^3.1.0"
   }
 }
