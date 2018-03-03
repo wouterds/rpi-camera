@@ -1,4 +1,4 @@
-import Config from 'config';
+import { servo } from 'config';
 import Registry from 'server/Registry';
 import LogService from 'server/services/Log';
 import { init } from 'raspi';
