@@ -4,6 +4,7 @@ import SocketIO from 'socket.io';
 import { staticFolder, httpPort } from 'config';
 import LogService from 'server/services/Log';
 import EventService from 'server/services/Event';
+import ServoService from 'server/services/Servo';
 import Registry from 'server/Registry';
 
 class Server
@@ -31,6 +32,10 @@ class Server
     this.logService.log('[Server] Configuring Express static folder..');
     express.use(Express.static(staticFolder));
 
+    this.logService.log('[Server] Configuring Express routes..');
+    express.get('/servo/left', ::this.moveServoLeft);
+    express.get('/servo/right', ::this.moveServoRight);
+
     this.logService.log('[Server] Initializing http server with Express instance..');
     const server = HttpServer(express);
 
@@ -45,6 +50,40 @@ class Server
 
     // Set event service on LogService so it can broadcast
     this.logService.eventService = Registry.get(EventService);
+  }
+
+  /**
+   * Move servo left
+   *
+   * @param {object} request
+   * @param {object} response
+   */
+  moveServoLeft(request, response) {
+    // Get servo service from registry
+    const servoService = Registry.get(ServoService);
+
+    // Move servo left
+    servoService.moveLeft();
+
+    // Response
+    response.json({ success: true });
+  }
+
+  /**
+   * Move servo right
+   *
+   * @param {object} request
+   * @param {object} response
+   */
+  moveServoRight(request, response) {
+    // Get servo service from registry
+    const servoService = Registry.get(ServoService);
+
+    // Move servo left
+    servoService.moveRight();
+
+    // Response
+    response.json({ success: true });
   }
 }
 
