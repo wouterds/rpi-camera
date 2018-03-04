@@ -1,11 +1,70 @@
-@import 'animations.css';
+@import 'animations';
 
 .camera {
   display: inline-block;
   position: relative;
 
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    background: rgba(#00f, 0.25);
+  }
+
+  .scanlines {
+    overflow: hidden;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+
+    &:before,
+    &:after {
+      display: block;
+      pointer-events: none;
+      content: '';
+      position: absolute;
+    }
+
+    &:before {
+      width: 100%;
+      height: 2px;
+      z-index: 2147483649;
+      background: rgba(0, 0, 50, 0.2);
+      opacity: 0.75;
+      animation: scanline 6s linear infinite;
+    }
+
+    &:after {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 2147483648;
+      background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 50, 0.2) 51%);
+      background-size: 100% 4px;
+      animation: scanlines 1s steps(60) infinite;
+    }
+  }
+
   img {
     height: 100%;
     max-width: 100%;
   }
+}
+
+@keyframes scanline {
+  0% { transform: translate3d(0, 200000%, 0); }
+}
+
+@keyframes scanlines {
+  0% { background-position: 0 50%; }
 }

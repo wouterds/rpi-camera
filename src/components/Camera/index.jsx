@@ -15,6 +15,7 @@ class App extends Component<{}>
 
     return (
       <div className={styles.camera}>
+        <div className={styles.scanlines}></div>
         <img src={cameraStream} />
       </div>
     );
