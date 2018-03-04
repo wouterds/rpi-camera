@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import type { Node } from 'react';
 import styles from './styles.css';
+import Camera from 'components/Camera';
 import Logs from 'components/Logs';
 import Controls from 'components/Controls';
 import Footer from 'components/Footer';
@@ -14,15 +15,11 @@ class App extends Component<{}>
    * @returns {Node}
    */
   render(): Node {
-    const cameraStream = `${location.protocol}//${location.hostname}:8080?action=stream`;
-
     return (
       <div className={styles.app}>
         <main className={styles.content}>
           <div className={styles.left}>
-            <div className={styles.camera}>
-              <img src={cameraStream} />
-            </div>
+            <Camera />
           </div>
           <div className={styles.right}>
             <Logs />

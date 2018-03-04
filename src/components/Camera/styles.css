@@ -1,0 +1,11 @@
+@import 'animations.css';
+
+.camera {
+  display: inline-block;
+  position: relative;
+
+  img {
+    height: 100%;
+    max-width: 100%;
+  }
+}
