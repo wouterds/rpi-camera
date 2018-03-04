@@ -39,3 +39,15 @@ sudo modprobe bcm2835-v4l2
 cd ../../
 rm -rf mjpg-streamer
 ```
+
+## Building
+
+```bash
+npm run build
+```
+
+## Running
+
+```bash
+sudo npm start
+```
