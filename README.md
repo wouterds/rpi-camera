@@ -51,3 +51,13 @@ npm run build
 ```bash
 sudo npm start
 ```
+
+## Configure to autostart on boot
+
+Add the following to `/etc/rc.local`
+
+```bash
+cd /home/pi/rpi-camera
+./scripts/camera-stream-start.sh
+./scripts/server-start.sh
+```
