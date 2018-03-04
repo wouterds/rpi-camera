@@ -56,6 +56,7 @@ class ServoService {
 
   moveRight() {
     if (this.position <= servo.pos.right) {
+      this.logService.log('fail', `[Services.Servo] Max servo position, not executing to prevent damage!`);
       return;
     }
 
@@ -67,6 +68,7 @@ class ServoService {
 
   moveLeft() {
     if (this.position >= servo.pos.left) {
+      this.logService.log('fail', `[Services.Servo] Max servo position, not executing to prevent damage!`);
       return;
     }
 
